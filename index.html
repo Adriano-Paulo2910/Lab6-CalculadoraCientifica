@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/Calculadora.css">
+  <title>Calculadora Científica</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="column">
+      <input type="text" id="result" readonly>
+
+      <div class="row">
+        <div class="button memory" onclick="addToMemory()">M+</div>
+        <div class="button memory" onclick="recallMemory()">MR</div>
+        <div class="button memory" onclick="clearMemory()">MC</div>
+        <div class="button" onclick="append('Math.E')">...</div>
+      </div>
+
+      <div class="row">
+        <div class="button" onclick="append('Math.sin(')">sin</div>
+        <div class="button" onclick="append('Math.cos(')">cos</div>
+        <div class="button" onclick="append('Math.tan(')">tan</div>
+        <div class="button" onclick="append('Math.asin(')">asin</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+      </div>
+
+      <div class="row">
+        <div class="button" onclick="append('Math.acos(')">acos</div>
+        <div class="button" onclick="append('Math.atan(')">atan</div>
+        <div class="button" onclick="append('Math.log(')">log</div>
+        <div class="button" onclick="append('Math.log10(')">log10</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+      </div>
+
+      <div class="row">
+        <div class="button" onclick="append('Math.sqrt(')">√</div>
+        <div class="button" onclick="append('Math.pow(')">x^y</div>
+        <div class="button" onclick="append('Math.PI')">π</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+      </div>
+
+
+      <div class="row">
+        <div class="button operator" onclick="clearResult()">C</div>
+        <div class="button operator" onclick="backspace()">&#9003;</div>
+        <div class="button operator" onclick="append('/')">/</div>
+        <div class="button" onclick="append('7')">7</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+      </div>
+
+      <div class="row">
+        <div class="button" onclick="append('8')">8</div>
+        <div class="button" onclick="append('9')">9</div>
+        <div class="button operator" onclick="append('*')">*</div>
+        <div class="button" onclick="append('4')">4</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+      </div>
+
+      <div class="row">
+        <div class="button" onclick="append('5')">5</div>
+        <div class="button" onclick="append('6')">6</div>
+        <div class="button operator" onclick="append('-')">-</div>
+        <div class="button" onclick="append('1')">1</div>
+      </div>
+
+      <div class="row">
+        <div class="button" onclick="append('2')">2</div>
+        <div class="button" onclick="append('3')">3</div>
+        <div class="button operator" onclick="append('+')">+</div>
+        <div class="button" onclick="append('0')">0</div>
+      </div>
+
+      <div class="row">
+        <div class="button" onclick="append('.')">.</div>
+        <div class="button" onclick="calculate()">=</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+        <div class="button" onclick="append('Math.E')">e</div>
+      </div>
+    </div>
+
+    <div class="history">
+      <h3>History</h3>
+      <ul id="history-list"></ul>
+    </div>
+
+    <div class="color-picker">
+      <label for="color-select">Background Color:</label>
+      <select id="color-select" onchange="changeBackgroundColor()">
+        <option value="#f4f4f4">Default</option>
+        <option value="#c3e6cb">Green</option>
+        <option value="#f8d7da">Red</option>
+        <option value="#d4edda">Teal</option>
+      </select>
+    </div>
+
+    <div class="language-select">
+      <label for="language-select">Language:</label>
+      <select id="language-select" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="pt">Portuguese</option>
+        <option value="es">Spanish</option>
+      </select>
+    </div>
+  </div>
+
+  <script>
+    var historyList = document.getElementById('history-list');
+
+    function clearResult() {
+      document.getElementById('result').value = '';
+    }
+
+    function backspace() {
+      var currentResult = document.getElementById('result').value;
+      document.getElementById('result').value = currentResult.slice(0, -1);
+    }
+
+    function append(value) {
+      document.getElementById('result').value += value;
+    }
+
+    function calculate() {
+      var expression = document.getElementById('result').value;
+      var result = eval(expression);
+
+      document.getElementById('result').value = result;
+
+      var historyItem = document.createElement('li');
+      historyItem.innerText = expression + ' = ' + result;
+      historyList.appendChild(historyItem);
+    }
+
+    function addToMemory() {
+      var result = document.getElementById('result').value;
+      localStorage.setItem('memory', result);
+    }
+
+    function recallMemory() {
+      var memory = localStorage.getItem('memory');
+      if (memory !== null) {
+        document.getElementById('result').value += memory;
+      }
+    }
+
+    function clearMemory() {
+      localStorage.removeItem('memory');
+    }
+
+    function changeBackgroundColor() {
+      var colorSelect = document.getElementById('color-select');
+      var selectedColor = colorSelect.value;
+      var calculator = document.querySelector('.calculator');
+      calculator.style.backgroundColor = selectedColor;
+    }
+
+    function changeLanguage() {
+      var languageSelect = document.getElementById('language-select');
+      var selectedLanguage = languageSelect.value;
+      // Implement logic to change the language of the calculator
+      // based on the selectedLanguage value.
+      // You can use external libraries or translation files for this purpose.
+      // Here, we're simply displaying an alert with the selected language for demonstration.
+      alert('Selected language: ' + selectedLanguage);
+    }
+  </script>
+</body>
+</html>

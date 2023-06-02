@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/Calculadora.css">
   <title>Calculadora Científica</title>
-  <style>
-    
-  </style>
 </head>
 <body>
   <div class="calculator">
@@ -15,73 +12,75 @@
       <input type="text" id="result" readonly>
 
       <div class="row">
-        <div class="button memory" onclick="addToMemory()">M+</div>
-        <div class="button memory" onclick="recallMemory()">MR</div>
-        <div class="button memory" onclick="clearMemory()">MC</div>
-        <div class="button" onclick="append('Math.E')">...</div>
+        <div class="button" onclick="addToMemory()">M+</div>
+        <div class="button" onclick="recallMemory()">MR</div>
+        <div class="button" onclick="clearMemory()">MC</div>
+        <div class="button" onclick="backspace()">&#9003;</div>
+        <div class="button operator" onclick="clearResult()">C</div>
       </div>
 
       <div class="row">
         <div class="button" onclick="append('Math.sin(')">sin</div>
         <div class="button" onclick="append('Math.cos(')">cos</div>
         <div class="button" onclick="append('Math.tan(')">tan</div>
-        <div class="button" onclick="append('Math.asin(')">asin</div>
         <div class="button" onclick="append('Math.E')">e</div>
+        <div class="button" onclick="append('Math.PI')">π</div>
       </div>
 
       <div class="row">
         <div class="button" onclick="append('Math.acos(')">acos</div>
         <div class="button" onclick="append('Math.atan(')">atan</div>
-        <div class="button" onclick="append('Math.log(')">log</div>
+        <div class="button" onclick="append('Math.asin(')">asin</div>
         <div class="button" onclick="append('Math.log10(')">log10</div>
         <div class="button" onclick="append('Math.E')">e</div>
       </div>
 
       <div class="row">
-        <div class="button" onclick="append('Math.sqrt(')">√</div>
-        <div class="button" onclick="append('Math.pow(')">x^y</div>
-        <div class="button" onclick="append('Math.PI')">π</div>
-        <div class="button" onclick="append('Math.E')">e</div>
-        <div class="button" onclick="append('Math.E')">e</div>
+        <div class="button operator" onclick="">x<sup>2</sup></div>
+        <div class="button operator" onclick=""><sup>1</sup>/x</div>
+        <div class="button operator" onclick="">|x|</div>
+        <div class="button operator" onclick="">exp</div>
+        <div class="button operator" onclick="">mod</div>
       </div>
 
-
       <div class="row">
-        <div class="button operator" onclick="clearResult()">C</div>
-        <div class="button operator" onclick="backspace()">&#9003;</div>
+        <div class="button operator" onclick="append('Math.sqrt(')">√</div>
+        <div class="button operator" onclick= "">(</div>
+        <div class="button operator" onclick= "">)</div>
+        <div class="button operator" onclick= "">n!</div>
         <div class="button operator" onclick="append('/')">/</div>
-        <div class="button" onclick="append('7')">7</div>
-        <div class="button" onclick="append('Math.E')">e</div>
       </div>
 
       <div class="row">
+        <div class="button operator" onclick="append('Math.pow(')">x<sup>y</sup></div>
+        <div class="button" onclick="append('7')">7</div>
         <div class="button" onclick="append('8')">8</div>
         <div class="button" onclick="append('9')">9</div>
         <div class="button operator" onclick="append('*')">*</div>
-        <div class="button" onclick="append('4')">4</div>
-        <div class="button" onclick="append('Math.E')">e</div>
       </div>
 
       <div class="row">
+        <div class="button operator" onclick="append('Math.pow(')">10<sup>x</sup></div>
+        <div class="button" onclick="append('4')">4</div>
         <div class="button" onclick="append('5')">5</div>
         <div class="button" onclick="append('6')">6</div>
         <div class="button operator" onclick="append('-')">-</div>
-        <div class="button" onclick="append('1')">1</div>
       </div>
 
-      <div class="row">
+      <div class="row">       
+        <div class="button operator" onclick="append('Math.log(')">log</div>
+        <div class="button" onclick="append('1')">1</div>
         <div class="button" onclick="append('2')">2</div>
         <div class="button" onclick="append('3')">3</div>
         <div class="button operator" onclick="append('+')">+</div>
-        <div class="button" onclick="append('0')">0</div>
       </div>
 
       <div class="row">
+        <div class="button operator">ln</div>
+        <div class="button"><sup>+</sup>/-</div>
+        <div class="button" onclick="append('0')">0</div>
         <div class="button" onclick="append('.')">.</div>
         <div class="button" onclick="calculate()">=</div>
-        <div class="button" onclick="append('Math.E')">e</div>
-        <div class="button" onclick="append('Math.E')">e</div>
-        <div class="button" onclick="append('Math.E')">e</div>
       </div>
     </div>
 

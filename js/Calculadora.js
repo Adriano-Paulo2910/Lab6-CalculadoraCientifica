@@ -55,6 +55,6 @@ var historyList = document.getElementById('history-list');
     function changeLanguage() {
       var languageSelect = document.getElementById('language-select');
       var selectedLanguage = languageSelect.value;
-      /**/
+      /*Não está funcional, mostra apenas um alert*/
       alert('Selected language: ' + selectedLanguage);
     }

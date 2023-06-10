@@ -25,6 +25,14 @@ function calculate() {
   }
 
   document.getElementById('result').value = result;
+  addToHistory(expression + ' = ' + result);
+}
+
+// Função para adicionar o resultado atual ao histórico
+function addToHistory(expression) {
+  var li = document.createElement('li');
+  li.appendChild(document.createTextNode(expression));
+  document.getElementById('history-list').appendChild(li);
 }
 
 function addToMemory() {

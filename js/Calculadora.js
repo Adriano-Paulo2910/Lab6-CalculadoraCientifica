@@ -131,3 +131,10 @@ function factorial() {
 
   document.getElementById('result').value = factorial;
 }
+
+// Função para alterar a cor de fundo da calculadora
+function changeBackgroundColor() {
+  var colorSelect = document.getElementById('color-select');
+  var color = colorSelect.options[colorSelect.selectedIndex].value;
+  document.body.style.backgroundColor = color;
+}

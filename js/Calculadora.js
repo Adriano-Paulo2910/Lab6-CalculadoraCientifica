@@ -89,3 +89,9 @@ function reciprocal() {
   var result = document.getElementById('result').value;
   document.getElementById('result').value = 1 / eval(result);
 }
+
+// Função para calcular o valor absoluto de um número
+function absolute() {
+  var result = document.getElementById('result').value;
+  document.getElementById('result').value = Math.abs(eval(result));
+}

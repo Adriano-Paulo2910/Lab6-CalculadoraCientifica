@@ -113,3 +113,21 @@ function squareRoot() {
   var result = document.getElementById('result').value;
   document.getElementById('result').value = Math.sqrt(eval(result));
 }
+
+// Função para calcular o fatorial de um número
+function factorial() {
+  var result = document.getElementById('result').value;
+  var num = parseInt(eval(result));
+  var factorial = 1;
+
+  if (num < 0) {
+    document.getElementById('result').value = 'Erro';
+    return;
+  }
+
+  for (var i = 2; i <= num; i++) {
+    factorial *= i;
+  }
+
+  document.getElementById('result').value = factorial;
+}

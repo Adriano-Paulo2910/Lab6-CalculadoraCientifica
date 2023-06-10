@@ -95,3 +95,9 @@ function absolute() {
   var result = document.getElementById('result').value;
   document.getElementById('result').value = Math.abs(eval(result));
 }
+
+// Função para calcular a exponencial de um número
+function exponential() {
+  var result = document.getElementById('result').value;
+  document.getElementById('result').value = Math.exp(eval(result));
+}

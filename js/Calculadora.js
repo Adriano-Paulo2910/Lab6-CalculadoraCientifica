@@ -101,3 +101,15 @@ function exponential() {
   var result = document.getElementById('result').value;
   document.getElementById('result').value = Math.exp(eval(result));
 }
+
+// Função para calcular o módulo de um número
+function modulo() {
+  var result = document.getElementById('result').value;
+  document.getElementById('result').value = Math.abs(eval(result));
+}
+
+// Função para calcular a raiz quadrada de um número
+function squareRoot() {
+  var result = document.getElementById('result').value;
+  document.getElementById('result').value = Math.sqrt(eval(result));
+}

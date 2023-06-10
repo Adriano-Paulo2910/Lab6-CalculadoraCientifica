@@ -35,6 +35,14 @@ function addToHistory(expression) {
   document.getElementById('history-list').appendChild(li);
 }
 
+// Função para limpar o histórico
+function clearHistory() {
+  var historyList = document.getElementById('history-list');
+  while (historyList.firstChild) {
+    historyList.removeChild(historyList.firstChild);
+  }
+}
+
 function addToMemory() {
   var result = document.getElementById('result').value;
   localStorage.setItem('memory', result);

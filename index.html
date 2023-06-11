@@ -21,27 +21,27 @@
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.sin(')">sin</div>
-        <div class="button operator" onclick="append('Math.cos(')">cos</div>
-        <div class="button operator" onclick="append('Math.tan(')">tan</div>
-        <div class="button operator" onclick="append('Math.E')">e</div>
-        <div class="button operator" onclick=""><span>e<sup>x</sup></span></div>
+        <div class="button operator" onclick="sin()">sin</div>
+        <div class="button operator" onclick="cos()">cos</div>
+        <div class="button operator" onclick="tan()">tan</div>
+        <div class="button operator" onclick="euler()">e</div>
+        <div class="button operator" onclick="eulerExp()"><span>e<sup>x</sup></span></div>
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.asin(')">asin</div>
-        <div class="button operator" onclick="append('Math.acos(')">acos</div>
-        <div class="button operator" onclick="append('Math.atan(')">atan</div>
-        <div class="button operator" onclick="append('Math.log10(')"><span>x<sup>3</sup></span></div>
-        <div class="button operator" onclick="">%</div>
+        <div class="button operator" onclick="asin()">asin</div>
+        <div class="button operator" onclick="acos()">acos</div>
+        <div class="button operator" onclick="atan()">atan</div>
+        <div class="button operator" onclick="cubic()"><span>x<sup>3</sup></span></div>
+        <div class="button operator" onclick="append('%')">%</div>
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.sin(')">sec</div>
-        <div class="button operator" onclick="append('Math.cos(')">cosc</div>
-        <div class="button operator" onclick="append('Math.tan(')">cot</div>
-        <div class="button operator" onclick="append('Math.E')"><span><sup>y</sup>&Sqrt;x</span></div>
-        <div class="button operator" onclick="append('Math.PI')">π</div>
+        <div class="button operator" onclick="sec()">sec</div>
+        <div class="button operator" onclick="cosc()">cosc</div>
+        <div class="button operator" onclick="cot()">cot</div>
+        <div class="button operator" onclick="calculateRoot()"><span><sup>y</sup>&Sqrt;x</span></div>
+        <div class="button operator" onclick="phi()">π</div>
       </div>
       
       <div class="row">
@@ -121,5 +121,6 @@
   </div>
 
   <script src="js/Calculadora.js"></script>
+  <script src="js/complexFunctions.js"></script>
 </body>
 </html>

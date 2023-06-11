@@ -69,14 +69,6 @@ function square() {
   document.getElementById('result').value = Math.pow(eval(result), 2);
 }
 
-<<<<<<< HEAD
-    function changeLanguage() {
-      var languageSelect = document.getElementById('language-select');
-      var selectedLanguage = languageSelect.value;
-      /*Não está funcional, mostra apenas um alert*/
-      alert('Selected language: ' + selectedLanguage);
-    }
-=======
 // Função para calcular o inverso de um número
 function reciprocal() {
   var result = document.getElementById('result').value;
@@ -153,4 +145,4 @@ function changeBackgroundColor() {
   var color = colorSelect.options[colorSelect.selectedIndex].value;
   document.body.style.backgroundColor = color;
 }
->>>>>>> luyandra
+

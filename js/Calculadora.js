@@ -1,3 +1,4 @@
+
 // Função para adicionar um elemento ao campo de texto
 function append(value) {
   document.getElementById('result').value += value;
@@ -145,3 +146,4 @@ function changeBackgroundColor() {
   var color = colorSelect.options[colorSelect.selectedIndex].value;
   document.body.style.backgroundColor = color;
 }
+

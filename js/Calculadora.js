@@ -152,15 +152,15 @@ function changeBackgroundColor() {
   document.body.style.backgroundColor = color;
 }
 
-function openConversionPage(option) {
-  if (option === 'comprimento') {
-    window.open('comprimento.html', '_blank');
-  } else if (option === 'temperatura') {
-    window.open('temperatura.html', '_blank');
-  } else if (option === 'massa') {
-    window.open('massa.html', '_blank');
-  }
-  else if (option === 'calculadora') {
-    window.open('index.html', '_blank');
-  }
-}
+// function openConversionPage(option) {
+//   if (option === 'comprimento') {
+//     window.open('comprimento.html','_self');
+//   } else if (option === 'temperatura') {
+//     window.open('temperatura.html','_self');
+//   } else if (option === 'massa') {
+//     window.open('massa.html','_self');
+//   }
+//   else if (option === 'calculadora') {
+//     window.open('.index.html','_self');
+//   }
+// }

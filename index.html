@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/Calculadora.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Scientific Calculator | Group AJLR </title>
 </head>
+
 <body>
+  <h1>Calculadora Científica</h1>
   <div class="calculator">
     <div class="column">
       <input type="text" id="result">
 
       <div class="conversion-menu">
-        <select class="conversion-menu-select" onchange="openConversionPage(this.value)">
-          <option value="calculadora">Calculadora Científica</option>
-          <option value="comprimento">Comprimento</option>
-          <option value="temperatura">Temperatura</option>
-          <option value="massa">Massa</option>
+        <select class="conversion-menu-select" onchange="window.location.href=this.value;">
+          <option>Calculadora Científica</option>
+          <option value="pages/comprimento.html">Comprimento</option>
+          <option value="pages/temperatura.html">Temperatura</option>
+          <option value="pages/massa.html">Massa</option>
         </select>
       </div>
-      
+
       <div class="row">
         <div class="button" onclick="addToMemory()">M+</div>
         <div class="button" onclick="recallMemory()">MR</div>
@@ -44,7 +48,7 @@
         <div class="button operator" onclick="append('Math.log10(')"><span>x<sup>3</sup></span></div>
         <div class="button operator" onclick="">%</div>
       </div>
-      
+
       <div class="row">
         <div class="button operator" onclick="append('Math.sin(')">sec</div>
         <div class="button operator" onclick="append('Math.cos(')">cosc</div>
@@ -85,7 +89,7 @@
         <div class="button operator" onclick="append('-')">-</div>
       </div>
 
-      <div class="row">       
+      <div class="row">
         <div class="button operator" onclick="append('Math.log(')">log</div>
         <div class="button" onclick="append('1')">1</div>
         <div class="button" onclick="append('2')">2</div>
@@ -100,7 +104,7 @@
         <div class="button" onclick="append('.')">.</div>
         <div class="button operator" onclick="calculate()">=</div>
       </div>
-    </div>  
+    </div>
 
     <div class="history">
       <h3>Histórico</h3>
@@ -131,4 +135,5 @@
 
   <script src="js/Calculadora.js"></script>
 </body>
+
 </html>

@@ -4,51 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Calculadora.css">
-    <link rel="stylesheet" href="css/massa.css">
-    <title>Massa</title>
+    <link rel="stylesheet" href="../css/Calculadora.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Comprimento</title>
 </head>
 
 <body>
-    <h1>Conversão de Massa e Peso</h1>
+    <h1>Conversão de Comprimento</h1>
 
     <div class="calculator">
-
         <div class="column">
             <input type="text" id="result">
-
             <div class="conversion-menu">
-                <select class="conversion-menu-select" onchange="openConversionPage(this.value)">
-                    <option value="calculadora">Calculadora Científica</option>
-                    <option value="comprimento">Comprimento</option>
-                    <option value="temperatura">Temperatura</option>
-                    <option value="massa">Massa</option>
+                <select class="conversion-menu-select" onchange="window.location.href=this.value;">
+                    <option>Comprimento</option>
+                    <option value="temperatura.html">Temperatura</option>
+                    <option value="massa.html">Massa</option>
+                    <option value="../index.html">Calculadora Científica</option>
                 </select>
             </div>
 
             <div class="column">
                 <label for="unidadeEntrada">Unidade de Entrada:</label>
                 <select id="unidadeEntrada">
-                    <option value="quilograma">Quilograma</option>
-                    <option value="grama">Grama</option>
-                    <option value="centigrama">Centigrama</option>
-                    <option value="decagrama">Decagrama</option>
-                    <option value="hectograma">Hectograma</option>
-                    <option value="decigrama">Decigrama</option>
-                    <option value="quilates">Quilates</option>
+                    <option value="metro">Metro</option>
+                    <option value="centimetro">Centímetro</option>
+                    <option value="Quilometro">Quilometro</option>
+                    <option value="Milimetro">Milimetro</option>
+                    <option value="Jardas">Jardas</option>
+                    <option value="Nanômetro">Nanômetro</option>
                 </select>
             </div>
 
             <div class="column">
                 <label for="unidadeSaida">Unidade de Saída:</label>
                 <select id="unidadeSaida">
-                    <option value="quilograma">Quilograma</option>
-                    <option value="grama">Grama</option>
-                    <option value="centigrama">Centigrama</option>
-                    <option value="decagrama">Decagrama</option>
-                    <option value="hectograma">Hectograma</option>
-                    <option value="decigrama">Decigrama</option>
-                    <option value="quilates">Quilates</option>
+                    <option value="metro">Metro</option>
+                    <option value="centimetro">Centímetro</option>
+                    <option value="Quilometro">Quilometro</option>
+                    <option value="Milimetro">Milimetro</option>
+                    <option value="Jardas">Jardas</option>
+                    <option value="centimetro">Nanômetro</option>
                 </select>
             </div>
 

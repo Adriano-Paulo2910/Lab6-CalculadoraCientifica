@@ -14,7 +14,8 @@ body {
 }
 
 .calculator #result{
-  text-align: center;
+
+  text-align: right;
 }
 
 .calculator input[type="text"] {

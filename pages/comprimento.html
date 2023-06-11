@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Calculadora.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Comprimento</title>
+</head>
+
+<body>
+    <h1>Conversão de Comprimento</h1>
+
+    <div class="calculator">
+        <div class="column">
+            <input type="text" id="result">
+            <div class="conversion-menu">
+                <select class="conversion-menu-select" onchange="window.location.href=this.value;">
+                    <option>Comprimento</option>
+                    <option value="temperatura.html">Temperatura</option>
+                    <option value="massa.html">Massa</option>
+                    <option value="../index.html">Calculadora Científica</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <label for="unidadeEntrada">Unidade de Entrada:</label>
+                <select id="unidadeEntrada">
+                    <option value="metro">Metro</option>
+                    <option value="centimetro">Centímetro</option>
+                    <option value="Quilometro">Quilometro</option>
+                    <option value="Milimetro">Milimetro</option>
+                    <option value="Jardas">Jardas</option>
+                    <option value="Nanômetro">Nanômetro</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <label for="unidadeSaida">Unidade de Saída:</label>
+                <select id="unidadeSaida">
+                    <option value="metro">Metro</option>
+                    <option value="centimetro">Centímetro</option>
+                    <option value="Quilometro">Quilometro</option>
+                    <option value="Milimetro">Milimetro</option>
+                    <option value="Jardas">Jardas</option>
+                    <option value="centimetro">Nanômetro</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <div class="row">
+                    <div class="button" onclick="addToMemory()">M+</div>
+                    <div class="button" onclick="append('7')">7</div>
+                    <div class="button" onclick="append('8')">8</div>
+                    <div class="button" onclick="append('9')">9</div>
+                </div>
+
+                <div class="row">
+                    <div class="button" onclick="recallMemory()">MR</div>
+                    <div class="button" onclick="append('4')">4</div>
+                    <div class="button" onclick="append('5')">5</div>
+                    <div class="button" onclick="append('6')">6</div>
+                    <div class="button operator" onclick="append('-')">-</div>
+                </div>
+
+                <div class="row">
+                    <div class="button" onclick="clearMemory()">MC</div>
+                    <div class="button" onclick="append('1')">1</div>
+                    <div class="button" onclick="append('2')">2</div>
+                    <div class="button" onclick="append('3')">3</div>
+                    <div class="button operator" onclick="append('+')">+</div>
+                </div>
+
+                <div class="row">
+                    <div class="button" onclick="clearResult()">C</div>
+                    <div class="button" onclick="toggleSign()"><span> <sup>+</sup>/-</span></div>
+                    <div class="button" onclick="append('0')">0</div>
+                    <div class="button" onclick="append('.')">.</div>
+                    <div class="button operator" onclick="calculate()">=</div>
+                </div>
+            </div>
+            <div class="history">
+                <h3>Histórico</h3>
+                <ul id="history-list"></ul>
+                <button id="clear-history" onclick="clearHistory()">Limpar Histórico</button>
+            </div>
+
+            <div class="color-picker">
+                <label for="color-select">Fundo:</label>
+                <select id="color-select" onchange="changeBackgroundColor()">
+                    <option value="#f4f4f4">Padrão</option>
+                    <option value="#c3e6cb">Green</option>
+                    <option value="#f8d7da">Red</option>
+                    <option value="#d4edda">Teal</option>
+                    <option value="#000000">black</option>
+                </select>
+            </div>
+
+            <div class="language-select">
+                <label for="language-select">Idioma:</label>
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="pt" selected>Portuguese</option>
+                    <option value="es">Spanish</option>
+                </select>
+            </div>
+        </div>
+        <script src="js/Calculadora.js"></script>
+</body>
+
+</html>

@@ -13,6 +13,7 @@ var historyList = document.getElementById('history-list');
       document.getElementById('result').value += value;
     }
 
+    /*  WITHOUT NECESSITY OF USING THIS FUNCTION YET
     function calculate() {
       var expression = document.getElementById('result').value;
       var result = eval(expression);
@@ -22,7 +23,7 @@ var historyList = document.getElementById('history-list');
       var historyItem = document.createElement('li');
       historyItem.innerText = expression + ' = ' + result;
       historyList.appendChild(historyItem);
-    }
+    }*/
 
     function addToMemory() {
       var result = document.getElementById('result').value;
@@ -55,6 +56,6 @@ var historyList = document.getElementById('history-list');
     function changeLanguage() {
       var languageSelect = document.getElementById('language-select');
       var selectedLanguage = languageSelect.value;
-      /*Não está funcional, mostra apenas um alert*/
+      /*It is not functional, it only shows an alert*/
       alert('Selected language: ' + selectedLanguage);
     }

@@ -25,43 +25,43 @@
         <div class="button operator" onclick="append('Math.cos(')">cos</div>
         <div class="button operator" onclick="append('Math.tan(')">tan</div>
         <div class="button operator" onclick="append('Math.E')">e</div>
-        <div class="button operator" onclick=""><span>e<sup>x</sup></span></div>
+        <div class="button operator" onclick="append('Math.exp(')"><span>e<sup>x</sup></span></div>
       </div>
 
       <div class="row">
         <div class="button operator" onclick="append('Math.asin(')">asin</div>
         <div class="button operator" onclick="append('Math.acos(')">acos</div>
         <div class="button operator" onclick="append('Math.atan(')">atan</div>
-        <div class="button operator" onclick="append('Math.log10(')"><span>x<sup>3</sup></span></div>
-        <div class="button operator" onclick="">%</div>
-      </div>
-
-      <div class="row">
-        <div class="button operator" onclick="append('Math.sin(')">sec</div>
-        <div class="button operator" onclick="append('Math.cos(')">cosc</div>
-        <div class="button operator" onclick="append('Math.tan(')">cot</div>
-        <div class="button operator" onclick="append('Math.E')"><span><sup>y</sup>&Sqrt;x</span></div>
+        <div class="button operator" onclick="append('Math.pow(')"><span>x<sup>y</sup></span></div>
         <div class="button operator" onclick="append('Math.PI')">π</div>
       </div>
       
       <div class="row">
-        <div class="button operator" onclick=""><span>x<sup>2</sup></span></div>
-        <div class="button operator" onclick=""><span><sup>1</sup>/x</span></div>
-        <div class="button operator" onclick="">|x|</div>
-        <div class="button operator" onclick="">exp</div>
-        <div class="button operator" onclick="">mod</div>
-      </div>
-
-      <div class="row">
+        <div class="button operator" onclick="append('1 / Math.sin(')">sec</div>
+        <div class="button operator" onclick="append('1 / Math.cos(')">cosec</div>
+        <div class="button operator" onclick="append('1 / Math.tan(')">cotan</div>
         <div class="button operator" onclick="append('Math.sqrt(')"><span><sup>2</sup>&Sqrt;x</span></div>
-        <div class="button operator" onclick= "">(</div>
-        <div class="button operator" onclick= "">)</div>
-        <div class="button operator" onclick= "">n!</div>
-        <div class="button operator" onclick="append('/')">/</div>
+        <div class="button operator" onclick="append('Math.abs(')">|x|</div>
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.pow(')"><span>x<sup>y</sup></span></div>
+        <div class="button operator" onclick="square()"><span>x<sup>2</sup></span></div>
+        <div class="button operator" onclick="reciprocal()"><span><sup>1</sup>/x</span></div>
+        <div class="button operator" onclick="absolute()">|x|</div>
+        <div class="button operator" onclick="exponential()">exp</div>
+        <div class="button operator" onclick="modulo()">mod</div>
+      </div>
+
+      <div class="row">
+        <div class="button operator" onclick="append('(')">(</div>
+        <div class="button operator" onclick="append(')')">)</div>
+        <div class="button operator" onclick="factorial()">n!</div>
+        <div class="button operator" onclick="append('Math.log10(')"><span>x<sup>3</sup></span></div>
+        <div class="button operator" onclick="append('%')">%</div>
+      </div>
+
+      <div class="row">
+        <div class="button operator" onclick="append('Math.pow(10, ')"><span>10<sup>x</sup></span></div>
         <div class="button" onclick="append('7')">7</div>
         <div class="button" onclick="append('8')">8</div>
         <div class="button" onclick="append('9')">9</div>
@@ -69,7 +69,7 @@
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.pow(')"><span>10<sup>x</sup></span></div>
+        <div class="button operator" onclick="append('Math.pow(')"><span>x<sup>y</sup></span></div>
         <div class="button" onclick="append('4')">4</div>
         <div class="button" onclick="append('5')">5</div>
         <div class="button" onclick="append('6')">6</div>
@@ -85,8 +85,8 @@
       </div>
 
       <div class="row">
-        <div class="button operator">ln</div>
-        <div class="button"><span> <sup>+</sup>/-</span></div>
+        <div class="button operator" onclick="append('Math.log(')"><span>ln</span></div>
+        <div class="button" onclick="toggleSign()"><span> <sup>+</sup>/-</span></div>
         <div class="button" onclick="append('0')">0</div>
         <div class="button" onclick="append('.')">.</div>
         <div class="button-equal" onclick="calculate()">=</div>
@@ -114,7 +114,7 @@
       <label for="language-select">Idioma:</label>
       <select id="language-select" onchange="changeLanguage()">
         <option value="en">English</option>
-        <option value="pt">Portuguese</option>
+        <option value="pt" selected>Portuguese</option>
         <option value="es">Spanish</option>
       </select>
     </div>

@@ -18,8 +18,6 @@ function calculate() {
   addToHistory(expression + ' = ' + result);
 }
 
-
-
 // Função para adicionar o resultado atual ao histórico
 function addToHistory(expression) {
   var li = document.createElement('li');
@@ -178,14 +176,14 @@ function changeBackgroundColor() {
 
 function openConversionPage(option) {
   if (option === 'comprimento') {
-    window.open('comprimento.html', '_blank');
+    window.open('pages/comprimento.html', '_blank');
   } else if (option === 'temperatura') {
-    window.open('temperatura.html', '_blank');
+    window.open('pages/temperatura.html', '_blank');
   } else if (option === 'massa') {
-    window.open('massa.html', '_blank');
+    window.open('pages/massa.html', '_blank');
   }
   else if (option === 'calculadora') {
-    window.open('index.html', '_blank');
+    window.open('pages/index.html', '_blank');
   }
 }
 

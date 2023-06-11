@@ -4,6 +4,25 @@ body {
   padding: 0;
 }
 
+.langWrap{
+  background: #333;
+  text-align: center;
+}
+
+a{
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 15px;
+  font-weight: bold;
+  background: #555656;
+  font-size: 18px;
+}
+
+a.active{
+background: #110146;
+}
+
 .calculator {
   max-width: 600px;
   margin: 50px auto;

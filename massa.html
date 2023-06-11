@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/massa.css">
+    <title>Massa</title>
+</head>
+<body>
+    <h1>Conversão de Massa e Peso</h1>
+
+    <label for="valorEntrada">Valor:</label>
+    <input type="number" id="valorEntrada">
+
+    <label for="unidadeEntrada">Unidade de Entrada:</label>
+    <select id="unidadeEntrada">
+        <option value="quilograma">Quilograma</option>
+        <option value="grama">Grama</option>
+        <option value="centigrama">Centigrama</option>
+        <option value="decagrama">Decagrama</option>
+        <option value="hectograma">Hectograma</option>
+        <option value="decigrama">Decigrama</option>
+        <option value="quilates">Quilates</option>
+    </select>
+
+    <label for="unidadeSaida">Unidade de Saída:</label>
+    <select id="unidadeSaida">
+        <option value="quilograma">Quilograma</option>
+        <option value="grama">Grama</option>
+        <option value="centigrama">Centigrama</option>
+        <option value="decagrama">Decagrama</option>
+        <option value="hectograma">Hectograma</option>
+        <option value="decigrama">Decigrama</option>
+        <option value="quilates">Quilates</option>
+    </select>
+
+    <button onclick="convertMassa()">Converter</button>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+</body>
+</html>

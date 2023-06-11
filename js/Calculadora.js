@@ -152,3 +152,12 @@ function changeBackgroundColor() {
   document.body.style.backgroundColor = color;
 }
 
+function openConversionPage(option) {
+  if (option === 'comprimento') {
+    window.open('comprimento.html', '_blank');
+  } else if (option === 'temperatura') {
+    window.open('temperatura.html', '_blank');
+  } else if (option === 'massa') {
+    window.open('massa.html', '_blank');
+  }
+}

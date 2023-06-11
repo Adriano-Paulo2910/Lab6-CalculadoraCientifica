@@ -12,6 +12,15 @@
     <div class="column">
       <input type="text" id="result">
 
+      <div class="conversion-menu">
+        <select class="conversion-menu-select" onchange="openConversionPage(this.value)">
+          <option value="" selected disabled>Conversão</option>
+          <option value="comprimento">Comprimento</option>
+          <option value="temperatura">Temperatura</option>
+          <option value="massa">Massa</option>
+        </select>
+      </div>
+      
       <div class="row">
         <div class="button" onclick="addToMemory()">M+</div>
         <div class="button" onclick="recallMemory()">MR</div>
@@ -89,9 +98,9 @@
         <div class="button" onclick="toggleSign()"><span> <sup>+</sup>/-</span></div>
         <div class="button" onclick="append('0')">0</div>
         <div class="button" onclick="append('.')">.</div>
-        <div class="button-equal" onclick="calculate()">=</div>
+        <div class="button operator" onclick="calculate()">=</div>
       </div>
-    </div>
+    </div>  
 
     <div class="history">
       <h3>Histórico</h3>

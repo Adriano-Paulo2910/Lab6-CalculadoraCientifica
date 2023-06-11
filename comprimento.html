@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/comprimento.css">
+    <title>Comprimento</title>
+</head>
+<body>
+    <h1>Conversão de Comprimento</h1>
+
+    <label for="valorEntrada">Valor:</label>
+    <input type="number" id="valorEntrada">
+
+    <label for="unidadeEntrada">Unidade de Entrada:</label>
+    <select id="unidadeEntrada">
+        <option value="metro">Metro</option>
+        <option value="centimetro">Centímetro</option>
+        <option value="Quilometro">Quilometro</option>
+        <option value="Milimetro">Milimetro</option>
+        <option value="Jardas">Jardas</option>
+        <option value="Nanômetro">Nanômetro</option>
+    </select>
+
+    <label for="unidadeSaida">Unidade de Saída:</label>
+    <select id="unidadeSaida">
+        <option value="metro">Metro</option>
+        <option value="centimetro">Centímetro</option>
+        <option value="Quilometro">Quilometro</option>
+        <option value="Milimetro">Milimetro</option>
+        <option value="Jardas">Jardas</option>
+        <option value="centimetro">Nanômetro</option>
+    </select>
+
+    <button onclick="convertComprimento()">Converter</button>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+</body>
+</html>

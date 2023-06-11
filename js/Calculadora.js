@@ -1,14 +1,4 @@
-var historyList = document.getElementById('history-list');
-
-function clearResult() {
-  document.getElementById('result').value = '';
-}
-
-function backspace() {
-  var currentResult = document.getElementById('result').value;
-  document.getElementById('result').value = currentResult.slice(0, -1);
-}
-
+// Função para adicionar um elemento ao campo de texto
 function append(value) {
   document.getElementById('result').value += value;
 }
@@ -43,39 +33,34 @@ function clearHistory() {
   }
 }
 
+// Função para limpar o campo de texto
+function clearResult() {
+  document.getElementById('result').value = '';
+}
+
+// Função para remover o último caractere do campo de texto
+function backspace() {
+  var result = document.getElementById('result').value;
+  document.getElementById('result').value = result.slice(0, -1);
+}
+
+// Função para adicionar o número à memória
 function addToMemory() {
   var result = document.getElementById('result').value;
   localStorage.setItem('memory', result);
 }
 
+// Função para recuperar o valor da memória
 function recallMemory() {
   var memory = localStorage.getItem('memory');
-  if (memory !== null) {
+  if (memory) {
     document.getElementById('result').value += memory;
   }
 }
 
+// Função para limpar o valor da memória
 function clearMemory() {
   localStorage.removeItem('memory');
-}
-
-function clearHistory() {
-  var historyList = document.getElementById('history-list');
-  historyList.innerHTML = '';
-}
-
-function changeBackgroundColor() {
-  var colorSelect = document.getElementById('color-select');
-  var selectedColor = colorSelect.value;
-  var calculator = document.querySelector('.calculator');
-  calculator.style.backgroundColor = selectedColor;
-}
-
-function changeLanguage() {
-  var languageSelect = document.getElementById('language-select');
-  var selectedLanguage = languageSelect.value;
-  /**/
-  alert('Selected language: ' + selectedLanguage);
 }
 
 // Função para calcular o quadrado de um número
@@ -114,6 +99,20 @@ function squareRoot() {
   document.getElementById('result').value = Math.sqrt(eval(result));
 }
 
+// Função para adicionar parênteses ao redor da expressão
+function addParentheses() {
+  var result = document.getElementById('result');
+  var startPosition = result.selectionStart;
+  var endPosition = result.selectionEnd;
+  var selectedText = result.value.substring(startPosition, endPosition);
+  result.value =
+    result.value.substring(0, startPosition) +
+    '(' +
+    selectedText +
+    ')' +
+    result.value.substring(endPosition, result.value.length);
+}
+
 // Função para calcular o fatorial de um número
 function factorial() {
   var result = document.getElementById('result').value;
@@ -130,6 +129,14 @@ function factorial() {
   }
 
   document.getElementById('result').value = factorial;
+}
+
+// Função para alterar o idioma da calculadora
+function changeLanguage() {
+  var languageSelect = document.getElementById('language-select');
+  var language = languageSelect.options[languageSelect.selectedIndex].value;
+
+  // Aqui você pode adicionar o código para alterar o idioma da calculadora de acordo com a opção selecionada
 }
 
 // Função para alterar a cor de fundo da calculadora

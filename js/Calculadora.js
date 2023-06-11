@@ -160,4 +160,7 @@ function openConversionPage(option) {
   } else if (option === 'massa') {
     window.open('massa.html', '_blank');
   }
+  else if (option === 'calculadora') {
+    window.open('index.html', '_blank');
+  }
 }

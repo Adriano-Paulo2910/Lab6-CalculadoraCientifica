@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/comprimento.css">
+    <link rel="stylesheet" href="css/comprimento.css">
     <title>Comprimento</title>
 </head>
+
 <body>
     <h1>Conversão de Comprimento</h1>
+    <div class="conversion-menu">
+        <select class="conversion-menu-select" onchange="openConversionPage(this.value)">
+            <option value="massa">Calculadora Científica</option>
+            <option value="comprimento">Comprimento</option>
+            <option value="temperatura">Temperatura</option>
+            <option value="massa">Massa</option>
+        </select>
+    </div>
 
     <label for="valorEntrada">Valor:</label>
     <input type="number" id="valorEntrada">
@@ -37,4 +47,5 @@
     <h2>Resultado:</h2>
     <div id="resultado"></div>
 </body>
+
 </html>

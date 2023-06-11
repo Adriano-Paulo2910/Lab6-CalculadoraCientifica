@@ -69,6 +69,12 @@ function square() {
   document.getElementById('result').value = Math.pow(eval(result), 2);
 }
 
+// Função para calcular o triplo t vde um número
+function squareTriple() {
+  var result = document.getElementById('result').value;
+  document.getElementById('result').value = Math.pow(eval(result), 3);
+}
+
 // Função para calcular o inverso de um número
 function reciprocal() {
   var result = document.getElementById('result').value;

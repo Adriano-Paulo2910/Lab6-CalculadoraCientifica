@@ -1,53 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Calculadora.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Massa</title>
+    <link rel="icon" href="img/icon.png">
+    <title data-lang-key="calculator.mass">Massa</title>
 </head>
 
 <body>
-    <h1>Conversão de Massa e Peso</h1>
-
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="text-center" data-lang-key="calculator.title2">Conversão de Massa e Peso</h1>
+          </div>
+          <div class="col-auto selectLeft">
+            <select class="form-select" id="language-select" style="width: 150px;">
+              <option value="pt" language="pt" selected>Português</option>
+              <option value="en" language="pt">English</option>
+              <option value="fr" language="pt">Français</option>
+              <option value="ja" language="pt">日本</option>
+              <option value="zh" language="pt">普通话</option>
+            </select>
+          </div>
+        </div>
+      </div>  
     <div class="calculator">
-
         <div class="column">
             <input type="text" id="result">
 
             <div class="conversion-menu">
                 <select class="conversion-menu-select" onchange="window.location.href=this.value;">
-                    <option>Massa</option>
-                    <option value="comprimento.html">Comprimento</option>
-                    <option value="temperatura.html">Temperatura</option>
-                    <option value="../index.html">Calculadora Científica</option>
+                    <option data-lang-key="calculator.mass">Massa</option>
+                    <option value="comprimento.html" data-lang-key="calculator.length">Comprimento</option>
+                    <option value="temperatura.html" data-lang-key="calculator.Temperature">Temperatura</option>
+                    <option data-lang-key="calculator.eq" value="equacao.html">Equação</option>
+                    <option value="../index.html" data-lang-key="calculator.sc">Calculadora Científica</option>
                 </select>
             </div>
             <div class="column">
-                <label for="unidadeEntrada">Unidade de Entrada:</label>
+                <label for="unidadeEntrada" data-lang-key="calculator.input">Unidade de Entrada:</label>
                 <select id="unidadeEntrada">
-                    <option value="quilograma">Quilograma</option>
-                    <option value="grama">Grama</option>
-                    <option value="centigrama">Centigrama</option>
-                    <option value="decagrama">Decagrama</option>
-                    <option value="hectograma">Hectograma</option>
-                    <option value="decigrama">Decigrama</option>
-                    <option value="quilates">Quilates</option>
+                    <option value="quilograma" data-lang-key="calculator.kg">Quilograma</option>
+                    <option value="grama" data-lang-key="calculator.gr">Grama</option>
+                    <option value="miligrama" data-lang-key="calculator.ml">Miligrama</option>
+                    <option value="micrograma" data-lang-key="calculator.mcr">Micrograma</option>
+                    <option value="tonelada" data-lang-key="calculator.to">Tonelada</option>
+                    <option value="libra" data-lang-key="calculator.li">Libra</option>
+                    <option value="onca" data-lang-key="calculator.on">Onça</option>
                 </select>
             </div>
 
             <div class="column">
-                <label for="unidadeSaida">Unidade de Saída:</label>
+                <label for="unidadeSaida" data-lang-key="calculator.output">Unidade de Saída:</label>
                 <select id="unidadeSaida">
-                    <option value="quilograma">Quilograma</option>
-                    <option value="grama">Grama</option>
-                    <option value="centigrama">Centigrama</option>
-                    <option value="decagrama">Decagrama</option>
-                    <option value="hectograma">Hectograma</option>
-                    <option value="decigrama">Decigrama</option>
-                    <option value="quilates">Quilates</option>
+                    <option value="quilograma" data-lang-key="calculator.kg">Quilograma</option>
+                    <option value="grama" data-lang-key="calculator.gr">Grama</option>
+                    <option value="miligrama" data-lang-key="calculator.mg">Miligrama</option>
+                    <option value="micrograma" data-lang-key="calculator.mcr">Micrograma</option>
+                    <option value="tonelada" data-lang-key="calculator.to">Tonelada</option>
+                    <option value="libra" data-lang-key="calculator.li">Libra</option>
+                    <option value="onca" data-lang-key="calculator.on">Onça</option>
                 </select>
             </div>
 
@@ -64,7 +79,6 @@
                     <div class="button" onclick="append('4')">4</div>
                     <div class="button" onclick="append('5')">5</div>
                     <div class="button" onclick="append('6')">6</div>
-                    <div class="button operator" onclick="append('-')">-</div>
                 </div>
 
                 <div class="row">
@@ -72,7 +86,6 @@
                     <div class="button" onclick="append('1')">1</div>
                     <div class="button" onclick="append('2')">2</div>
                     <div class="button" onclick="append('3')">3</div>
-                    <div class="button operator" onclick="append('+')">+</div>
                 </div>
 
                 <div class="row">
@@ -80,36 +93,31 @@
                     <div class="button" onclick="toggleSign()"><span> <sup>+</sup>/-</span></div>
                     <div class="button" onclick="append('0')">0</div>
                     <div class="button" onclick="append('.')">.</div>
-                    <div class="button operator" onclick="calculate()">=</div>
+                    <div class="button operator" onclick="converterMassa()">=</div>
                 </div>
             </div>
             <div class="history">
-                <h3>Histórico</h3>
+                <h3 data-lang-key="calculator.history">Histórico</h3>
                 <ul id="history-list"></ul>
-                <button id="clear-history" onclick="clearHistory()">Limpar Histórico</button>
+                <button id="clear-history" onclick="clearHistory()" data-lang-key="calculator.delete">Limpar Histórico</button>
+                <div>
+                    <button id="btn-download" data-lang-key="calculator.download">Download Histórico</button>
+                    <ul id="history-list"></ul>
+                </div>
             </div>
-
             <div class="color-picker">
-                <label for="color-select">Fundo:</label>
+                <label for="color-select" data-lang-key="calculator.background">Fundo:</label>
                 <select id="color-select" onchange="changeBackgroundColor()">
-                    <option value="#f4f4f4">Padrão</option>
-                    <option value="#c3e6cb">Green</option>
-                    <option value="#f8d7da">Red</option>
-                    <option value="#d4edda">Teal</option>
-                    <option value="#000000">black</option>
+                    <option value="#f4f4f4" data-lang-key="calculator.cc">Cinzento claro</option>
+                    <option value="#c3e6cb" data-lang-key="calculator.vc">Verde Claro</option>
+                    <option value="#f8d7da" data-lang-key="calculator.rc">Rosa Claro</option>
+                    <option value="#3E579E" data-lang-key="calculator.az">Azul</option>
+                    <option value="#FFA500" data-lang-key="calculator.la">Laranja</option>
                 </select>
-            </div>
-
-            <div class="language-select">
-                <label for="language-select">Idioma:</label>
-                <select id="language-select" onchange="changeLanguage()">
-                    <option value="en">English</option>
-                    <option value="pt" selected>Portuguese</option>
-                    <option value="es">Spanish</option>
-                </select>
-            </div>
+                 </div>
         </div>
-        <script src="js/Calculadora.js"></script>
+        <script src="../js/calculadora.js"></script>
+        <script src="../js/massa.js"></script>
 </body>
 
 </html>

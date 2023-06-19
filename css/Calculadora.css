@@ -5,7 +5,7 @@ body {
 }
 
 .langWrap{
-  background: #333;
+  background: #f4f4f4;
   text-align: center;
 }
 
@@ -137,4 +137,9 @@ background: #110146;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.selectLeft select{
+  margin-left: 28.9%;
+  margin-top: 1rem;
 }

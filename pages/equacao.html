@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Calculadora.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="img/icon.png">
+    <title data-lang-key="calculator.length">Equação</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center" data-lang-key="calculator.title1">Equações</h1>
+            </div>
+            <div class="col-auto selectLeft">
+                <select class="form-select" id="language-select" style="width: 150px;">
+                    <option value="pt" language="pt" selected>Português</option>
+                    <option value="en" language="pt">English</option>
+                    <option value="fr" language="pt">Français</option>
+                    <option value="ja" language="pt">日本</option>
+                    <option value="zh" language="pt">普通话</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="calculator">
+        <div class="column">
+            <div class="conversion-menu">
+                <select class="conversion-menu-select" onchange="window.location.href=this.value;">
+                    <option data-lang-key="calculator.eq" value="equacao.html">Equação</option>
+                    <option data-lang-key="calculator.length" value="comprimento.html">Comprimento</option>
+                    <option data-lang-key="calculator.temperature" value="temperatura.html">Temperatura</option>
+                    <option data-lang-key="calculator.mass" value="massa.html">Massa</option>
+                    <option data-lang-key="calculator.sc" value="../index.html">Calculadora Científica</option>
+                </select>
+            </div>
+            <input type="text" id="result">
+            <button onclick="solveEquation()">Calcular</button>
+            <div class="row">
+                <div class="button" onclick="clearResult()">C</div>
+            </div>
+
+        </div>
+
+        <div class="history">
+            <h3 data-lang-key="calculator.history">Histórico</h3>
+            <ul id="history-list"></ul>
+            <button id="clear-history" onclick="clearHistory()" data-lang-key="calculator.delete">Limpar
+                Histórico</button>
+            <div>
+                <button id="btn-download" data-lang-key="calculator.download">Download Histórico</button>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+
+        <div class="color-picker">
+            <label for="color-select" data-lang-key="calculator.background">Fundo:</label>
+            <select id="color-select" onchange="changeBackgroundColor()">
+                <option value="#f4f4f4" data-lang-key="calculator.cc">Cinzento claro</option>
+                <option value="#c3e6cb" data-lang-key="calculator.vc">Verde Claro</option>
+                <option value="#f8d7da" data-lang-key="calculator.rc">Rosa Claro</option>
+                <option value="#3E579E" data-lang-key="calculator.az">Azul</option>
+                <option value="#FFA500" data-lang-key="calculator.la">Laranja</option>
+            </select>
+             </div>
+        <script src="../js/equacao.js"></script>
+        <script src="../js/calculadora.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-pt">
 
 <head>
   <meta charset="UTF-8">
@@ -7,29 +7,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/Calculadora.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/icon.png">
   <title>Scientific Calculator | Group AJLR </title>
 </head>
 
 <body>
   <div class="container">
-    <div class="langWrap">
-      <a href="#" language="portuguese" class="active">Português</a>
-      <a href="#" language="english">English</a>
-      <a href="#" language="french">Français</a>
-      <a href="#" language="japanese">日本</a>
-      <a href="#" language="chinese">普通话</a>
-    </div>
-  </div>
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center" data-lang-key="calculator.title">Calculadora Científica</h1>
+      </div>
+      <div class="col-auto selectLeft">
+        <select class="form-select" id="language-select" style="width: 150px;">
+          <option value="pt" language="pt" selected>Português</option>
+          <option value="en" language="pt">English</option>
+          <option value="fr" language="pt">Français</option>
+          <option value="ja" language="pt">日本</option>
+          <option value="zh" language="pt">普通话</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+  
   <div class="calculator">
     <div class="column">
       <input type="text" id="result">
 
       <div class="conversion-menu">
-        <select class="conversion-menu-select" onchange="openConversionPage(this.value)">
-          <option value="calculadora" class="ca">Calculadora Científica</option>
-          <option value="comprimento" class="co">Comprimento</option>
-          <option value="temperatura" class="te">Temperatura</option>
-          <option value="massa" class="ma">Massa</option>
+        <select class="conversion-menu-select" onchange="window.location.href=this.value;">
+          <option data-lang-key="calculator.op1">Calculadora Científica</option>
+          <option data-lang-key="calculator.op2" value="pages/comprimento.html">Comprimento</option>
+          <option data-lang-key="calculator.op3" value="pages/temperatura.html">Temperatura</option>
+          <option data-lang-key="calculator.op4" value="pages/massa.html">Massa</option>
+          <option data-lang-key="calculator.op5" value="pages/equacao.html">Equação</option>
         </select>
       </div>
 
@@ -42,27 +52,27 @@
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.sin(')">sin</div>
-        <div class="button operator" onclick="append('Math.cos(')">cos</div>
-        <div class="button operator" onclick="append('Math.tan(')">tan</div>
-        <div class="button operator" onclick="append('Math.E')">e</div>
-        <div class="button operator" onclick=""><span>e<sup>x</sup></span></div>
+        <div class="button operator" onclick="sin()">sin</div>
+        <div class="button operator" onclick="cos()">cos</div>
+        <div class="button operator" onclick="tan()">tan</div>
+        <div class="button operator" onclick="euler()">e</div>
+        <div class="button operator" onclick="eulerExp()"><span>e<sup>x</sup></span></div>
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.asin(')">asin</div>
-        <div class="button operator" onclick="append('Math.acos(')">acos</div>
-        <div class="button operator" onclick="append('Math.atan(')">atan</div>
-        <div class="button operator" onclick="append('Math.log10(')"><span>x<sup>3</sup></span></div>
-        <div class="button operator" onclick="">%</div>
+        <div class="button operator" onclick="asin()">asin</div>
+        <div class="button operator" onclick="acos()">acos</div>
+        <div class="button operator" onclick="atan()">atan</div>
+        <div class="button operator" onclick="squareTriple()"><span>x<sup>3</sup></span></div>
+        <div class="button operator" onclick="result.value*=-1"><span> <sup>+</sup>/-</span></div>
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.sin(')">sec</div>
-        <div class="button operator" onclick="append('Math.cos(')">cosc</div>
-        <div class="button operator" onclick="append('Math.tan(')">cot</div>
-        <div class="button operator" onclick="append('Math.E')"><span><sup>y</sup>&Sqrt;x</span></div>
-        <div class="button operator" onclick="append('Math.PI')">π</div>
+        <div class="button operator" onclick="sec()">sec</div>
+        <div class="button operator" onclick="cosc()">cosc</div>
+        <div class="button operator" onclick="cot()">cot</div>
+        <div class="button operator" onclick="append('yroot')"><span><sup>y</sup>&Sqrt;x</span></div>
+        <div class="button operator" onclick="phi()">π</div>
       </div>
 
       <div class="row">
@@ -74,11 +84,12 @@
       </div>
 
       <div class="row">
+        <div class="button operator" onclick="squareRoot()"><span><sup>2</sup>&Sqrt;x</span></div>
         <div class="button operator" onclick="append('(')">(</div>
         <div class="button operator" onclick="append(')')">)</div>
         <div class="button operator" onclick="factorial()">n!</div>
-        <div class="button operator" onclick="squareTriple()"><span>x<sup>3</sup></span></div>
-        <div class="button operator" onclick="append('%')">%</div>
+        <div class="button operator" onclick="append('/')">/</div>
+     
       </div>
 
       <div class="row">
@@ -98,7 +109,7 @@
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.log(')">log</div>
+        <div class="button operator" onclick="log()">log</div>
         <div class="button" onclick="append('1')">1</div>
         <div class="button" onclick="append('2')">2</div>
         <div class="button" onclick="append('3')">3</div>
@@ -106,38 +117,38 @@
       </div>
 
       <div class="row">
-        <div class="button operator" onclick="append('Math.log(')"><span>ln</span></div>
-        <div class="button" onclick="result.value*=-1"><span> <sup>+</sup>/-</span></div>
+        <div class="button operator" onclick="ln()">ln</div>
         <div class="button" onclick="append('0')">0</div>
         <div class="button" onclick="append('.')">.</div>
+        <div class="button" onclick="append(',')">,</div>
         <div class="button operator" onclick="calculate()">=</div>
       </div>
     </div>
 
     <div class="history">
-      <h3 class="h3">Histórico</h3>
+      <h3 class="h3" data-lang-key="calculator.history">Histórico</h3>
 
       <ul id="history-list"></ul>
-      <button id="clear-history" onclick="clearHistory()" class="his">Limpar Histórico</button>
+      <button id="clear-history" onclick="clearHistory()" data-lang-key="calculator.delete">Limpar Histórico</button>
       <div>
-        <button id="btn-download">Download Histórico</button>
+        <button id="btn-download" data-lang-key="calculator.download">Baixar Histórico</button>
         <ul id="history-list"></ul>
       </div>
     </div>
 
     <div class="color-picker">
-      <label for="color-select" class="label">Fundo:</label>
+      <label for="color-select" data-lang-key="calculator.background">Fundo:</label>
       <select id="color-select" onchange="changeBackgroundColor()">
-        <option value="#f4f4f4" class="cc">Cinzento claro</option>
-        <option value="#c3e6cb" class="vc">Verde Claro</option>
-        <option value="#f8d7da" class="rc">Rosa Claro</option>
-        <option value="#3E579E" class="az">Azul</option>
-        <option value="#000000" class="pt">Preto</option>
+        <option value="#f4f4f4" data-lang-key="calculator.cc">Cinzento claro</option>
+        <option value="#c3e6cb" data-lang-key="calculator.vc">Verde Claro</option>
+        <option value="#f8d7da" data-lang-key="calculator.rc">Rosa Claro</option>
+        <option value="#3E579E" data-lang-key="calculator.az">Azul</option>
+        <option value="#FFA500" data-lang-key="calculator.la">Laranja</option>
       </select>
-    </div>
+      </div>
   </div>
 
-  <script src="js/Calculadora.js"></script>
+  <script src="js/calculadora.js"></script>
 </body>
 
 </html>
